@@ -37,7 +37,7 @@ def selection_sort():
 
         #temp = numbers[lower_number]
         #numbers[lower_number] = numbers[i]
-        #umbers[i] = temp
+        #numbers[i] = temp
         numbers[i], numbers[lower_number] = numbers[lower_number], numbers[i]
     print(numbers)
 
