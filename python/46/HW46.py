@@ -5,14 +5,24 @@ class Die:
 
     def __init__(self, sides):
         self._sides = sides
+        self._value = 1
+
+    def value(self):
+        return self._value
 
     def roll(self):
+        self._value = random.randint(1, self._sides)
+        return self._value
 
-        print(random.randint(1, self._sides))
+    def __str__(self):
+        return f'sides: {self._sides} value: {self._value}'
 
 
 play_die = Die(int(input('How many sides? ')))
+print(play_die)
+
 play_die.roll()
+print(play_die)
 
 
 class six_sided_die(Die):
@@ -22,7 +32,10 @@ class six_sided_die(Die):
 
 
 play_six_sided = six_sided_die()
+print(play_six_sided)
+
 play_six_sided.roll()
+print(play_six_sided)
 
 
 # selection sort
