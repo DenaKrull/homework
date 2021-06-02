@@ -1,0 +1,29 @@
+html{
+  background-color: rgb(243, 197, 223);
+
+  } 
+
+h1{
+    color: rgb(194, 248, 241);
+    font-size: 36px;
+    font-style: oblique;
+    font-weight: initial bold;
+    border: 2px solid rgb(210, 235, 178);
+    border-radius: 8px;
+  }
+
+header{
+    text-align: center;
+    border-bottom: 1px inset black;
+    }
+
+nav{
+    text-align: center;
+    font-size: 15px;
+  }
+
+p image{
+    width: 250px;
+  }
+
+
