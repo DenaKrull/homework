@@ -1,0 +1,91 @@
+    html {
+        background-color: rgb(64, 77, 83);
+        overflow: auto;
+    }
+    
+    h1 {
+        color: rgb(111 74 86);
+        font-size: 36px;
+        font-style: bold;
+        border: 9px solid rgb(216 166 166);
+        border-radius: 50px;
+        text-transform: uppercase;
+        margin-left: 375px;
+        margin-right: 375px;
+    }
+    
+    h2 {
+        color: rgb(119, 73, 73);
+    }
+    
+    header {
+        text-align: center;
+        border-bottom: 1px inset rgb(216 166 166);
+    }
+    
+    article {
+        background-color: rgb(216 166 166);
+        color: rgb(53, 49, 49);
+        padding: 2em;
+        text-align: justify;
+        max-width: 800px;
+        margin: auto;
+    }
+    
+    nav {
+        text-align: center;
+        font-size: 15px;
+    }
+    
+    a {
+        text-transform: unset;
+        font-style: bold;
+        font-weight: 700;
+        font-size: 20px;
+        text-decoration: none;
+    }
+    
+    .menuItem {
+        color: red;
+    }
+    
+    header img {
+        width: 400px;
+    }
+    
+    img {
+        width: 250px;
+    }
+    
+    a:link {
+        color: white;
+    }
+    
+    a:visited {
+        color: darkgray;
+    }
+    
+    a:focus {
+        color: yellow;
+    }
+    
+    a:hover {
+        color: rgb(83, 190, 226);
+    }
+    
+    a:active {
+        color: greenyellow;
+    }
+    
+    #copyright {
+        color: black;
+        font-weight: bold;
+    }
+    
+    footer {
+        position: absolute;
+    }
+    
+    ul .myList {
+        display: inline;
+    }
