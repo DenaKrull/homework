@@ -3,6 +3,10 @@
         overflow: auto;
     }
     
+    body {
+        text-align: center;
+    }
+    
     h1 {
         color: rgb(111 74 86);
         font-size: 36px;
