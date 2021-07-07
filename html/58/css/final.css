@@ -1,0 +1,221 @@
+    html {
+        margin: auto;
+    }
+    
+    body {
+        background-color: white;
+        font-family: helvetica, arial, sans-serif;
+        margin-bottom: 4em;
+        padding-left: 3em;
+        padding-right: 3em;
+    }
+    
+    nav {
+        background-color: black;
+        font-size: 12px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    
+    a {
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+        padding-right: .75em;
+        padding-left: 1em;
+    }
+    
+    a:hover {
+        color: red;
+        text-decoration: underline;
+    }
+    
+    header {
+        z-index: 1;
+        background-color: lightgray;
+        border-radius: 6px;
+        text-align: center;
+        padding: 2em;
+        margin-top: 3.25em;
+    }
+    
+    div {
+        text-align: left;
+    }
+    
+    header h1 {
+        text-transform: uppercase;
+    }
+    
+    h1 {
+        font-size: 22px;
+    }
+    
+    .italic {
+        font-style: italic;
+    }
+    
+    ul {
+        list-style-type: none;
+    }
+    
+    ul li * {
+        text-align: center;
+        font-weight: bold;
+        font-size: 18px;
+        padding-top: .25em;
+    }
+    
+    div li {
+        text-align: justify;
+    }
+    
+    img,
+    video {
+        width: 95%;
+        z-index: 2;
+        padding-left: 0;
+    }
+    
+    form {
+        background-color: lightgray;
+        border-radius: 6px;
+        text-align: center;
+        padding: 2em;
+    }
+    
+    .form {
+        text-align: center;
+        font-weight: bold;
+        padding-bottom: 1em;
+        font-size: 22px;
+    }
+    
+    label {
+        display: block;
+    }
+    
+    input,
+    button {
+        margin: .25em;
+        border: 2px solid gray;
+        border-radius: 5px;
+    }
+    
+    input {
+        box-shadow: 3px 3px black;
+    }
+    
+    table {
+        display: block;
+        max-width: fit-content;
+        border-collapse: collapse;
+        overflow-x: auto;
+        margin: auto;
+        padding-top: 2em;
+    }
+    
+    td,
+    th {
+        border: 1px solid black;
+    }
+    
+    td {
+        text-align: right;
+    }
+    
+    caption {
+        font-weight: bold;
+        margin-bottom: 1em;
+    }
+    
+    td:last-of-type {
+        color: red;
+    }
+    
+    tbody tr:last-of-type td:first-of-type {
+        column-span: 5;
+    }
+    
+    tbody tr:hover {
+        background-color: lightblue !important;
+    }
+    
+    tbody tr:nth-child(odd):not(tr:last-of-type) {
+        background-color: lightsteelblue;
+    }
+    
+    tr td:first-of-type,
+    tr th {
+        font-weight: bold;
+        text-align: center;
+    }
+    
+    tr:last-of-type td:first-of-type {
+        text-align: right;
+    }
+    
+    #financials,
+    #products,
+    #signUp,
+    #aboutUs {
+        scroll-margin-top: 50px
+    }
+    
+    footer {
+        background-color: black;
+        color: white;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin-top: 5em;
+        padding-left: 2em;
+    }
+    
+    @media screen and (min-width: 1000px) {
+        img,
+        video {
+            width: 100%;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding-left: 0;
+            text-align: center;
+        }
+        div {
+            padding: 0;
+        }
+        div li {
+            margin: 1em;
+        }
+        ul div:not(:last-of-type) {
+            border-right: 1px solid black;
+        }
+        ul div {
+            padding: 1em;
+        }
+        form {
+            padding-bottom: 1em;
+        }
+        label {
+            display: inline;
+        }
+        nav {
+            font-size: 16px;
+        }
+        table {
+            width: auto;
+            padding-left: 2em;
+            padding-right: 2em;
+            white-space: nowrap;
+        }
+        td,
+        th {
+            width: 1000px;
+        }
+    }
