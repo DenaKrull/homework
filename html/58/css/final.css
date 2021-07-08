@@ -58,11 +58,12 @@
         font-style: italic;
     }
     
-    ul {
+    ul li {
         list-style-type: none;
+        display: inline;
     }
     
-    ul li * {
+    ul li p {
         text-align: center;
         font-weight: bold;
         font-size: 18px;
@@ -101,11 +102,8 @@
     input,
     button {
         margin: .25em;
-        border: 2px solid gray;
+        border: 3px solid gray;
         border-radius: 5px;
-    }
-    
-    input {
         box-shadow: 3px 3px black;
     }
     
