@@ -1,3 +1,4 @@
 "use strict";
-var name = 'Dena';
+var myName = 'Dena';
 var email = 'denakrull@gmail.com';
+console.log(`${myName} ${email}`);
