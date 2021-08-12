@@ -14,8 +14,10 @@ function myEvery(theArray, callback) {
     }
     return true;
 }
-console.log(letters.every(isUppercase));
-console.log(letters.every(isLowercase));
+
+console.log('every');
+// console.log(letters.every(isUppercase));
+// console.log(letters.every(isLowercase));
 console.log(myEvery(letters, isUppercase));
 console.log(myEvery(letters, isLowercase));
 
@@ -33,20 +35,16 @@ function mySome(theArray, callback) {
     }
     return false;
 }
-
+console.log('some');
 console.log(mySome(letters2, isUppercase2));
 console.log(mySome(letters2, isLowerCase2));
-console.log(letters2.some(isUppercase2));
-console.log(letters2.some(isLowerCase2));
+// console.log(letters2.some(isUppercase2));
+// console.log(letters2.some(isLowerCase2));
 
 
-
+console.log('onlyIf');
 let numbers = [1, 2, 3, 4, 5, 6];
 let number = (number) => number % 2 === 0;
-// let action = number => number + 1;
-
-
-let action = (number) => number + 1;
 
 
 function onlyif(theArray, test, action) {
@@ -60,9 +58,10 @@ function onlyif(theArray, test, action) {
 
 }
 
-onlyif(numbers, number, console.log(action));
+onlyif(numbers, number, console.log);
 
 
+console.log('multiply');
 
 function multiply(a, b) {
     return a * b;
