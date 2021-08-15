@@ -59,7 +59,8 @@ function onlyif(theArray, test, action) {
 }
 
 onlyif(numbers, number, console.log);
-
+console.log(numbers.filter(number)); //using filter as only if
+numbers.filter(number).forEach(e => console.log(e));
 
 console.log('multiply');
 
@@ -77,8 +78,9 @@ function getMultiplier() {
     };
 }
 
-let multiplier = getMultiplier();
-multiplier(4, 5);
+// let multiplier = getMultiplier();
+// multiplier(4, 5);
+getMultiplier()(4, 5);
 
 function getBestMultiplier(a) {
     return function(b) {
@@ -87,8 +89,10 @@ function getBestMultiplier(a) {
 }
 
 
-var multiplyByFive = getBestMultiplier(5);
-multiplyByFive(2);
+// var multiplyByFive = getBestMultiplier(5);
+// multiplyByFive(2);
+getBestMultiplier(5)(2);
 
-var multiplyBySix = getBestMultiplier(6);
-multiplyBySix(2);
+// var multiplyBySix = getBestMultiplier(6);
+// multiplyBySix(2);
+getBestMultiplier(6)(2);
