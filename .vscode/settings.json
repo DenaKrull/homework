@@ -4,5 +4,8 @@
     "python.linting.enabled": true,
     "liveServer.settings.port": 5501,
     "editor.formatOnSave": true,
-    "editor.scrollPredominantAxis": true
+    "editor.scrollPredominantAxis": true,
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "Cascadia Code,'Consolas', 'Courier New', monospace",
+    "editor.renderWhitespace": "none"
 }

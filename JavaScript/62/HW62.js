@@ -1,41 +1,53 @@
-'use strict';
+/* globals interestCalculater */
 
 const dayOfWeek = (function() {
+    'use strict';
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-    function getIndex(dayName) {
-        return days.findIndex(d => d.toLowerCase() === dayName.toLowerCase()) + 1;
-    }
 
     return {
         getMonth: (index) => days[index - 1],
-        getIndex: getIndex
+        getIndex: (dayName) => days.findIndex(d => d.toLowerCase() === dayName.toLowerCase()) + 1
     };
 })();
 
-console.log('dayOfWeek.getIndex("Monday")', dayOfWeek.getIndex('Monday'));
-console.log('dayOfWeek.getMonth("4")', dayOfWeek.getMonth(4));
+console.log('dayOfWeek.getIndex("Monday")', dayOfWeek.getIndex('Wednesday'));
+console.log('dayOfWeek.getMonth("4")', dayOfWeek.getMonth(7));
 
 
-const interestCalculater = (function() {
+// const 
+window.interestCalculater = (function() {
 
-    const interestRate = 0;
-    const numberOfYears = 0;
+    let interestRate;
+    let numberOfYears;
 
-    // function setRate(rate) {
-    //     return interestRate === rate;
-    // }
-
-
-    function calculate(rate, year) {
-        return rate * year;
+    function calculate(principle) {
+        let p = principle;
+        for (let i = 0; i < numberOfYears; i++) {
+            p += p * interestRate;
+        }
+        return p - principle;
     }
+
     return {
-        calculate: calculate,
-        setRate: (rate) => interestRate === rate,
-        setYear: (year) => numberOfYears === year
+        setYears: function(year) {
+            numberOfYears = year;
+            return this;
+        },
+
+        setRate: function(rate) {
+            interestRate = rate;
+            return this;
+        },
+        calculate: calculate
     };
 })();
 
 
-console.log(interestCalculater.calculate(5, '.02'));
+interestCalculater.setYears(2);
+interestCalculater.setRate(0.1);
+console.log(interestCalculater.calculate(100));
+
+console.log(
+    interestCalculater.setYears(3).setRate(0.05).calculate(100)
+);
