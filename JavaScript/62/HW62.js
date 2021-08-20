@@ -6,13 +6,13 @@ const dayOfWeek = (function() {
 
 
     return {
-        getMonth: (index) => days[index - 1],
+        getDay: (index) => days[index - 1],
         getIndex: (dayName) => days.findIndex(d => d.toLowerCase() === dayName.toLowerCase()) + 1
     };
 })();
 
 console.log('dayOfWeek.getIndex("Monday")', dayOfWeek.getIndex('Wednesday'));
-console.log('dayOfWeek.getMonth("4")', dayOfWeek.getMonth(7));
+console.log('dayOfWeek.getMonth("4")', dayOfWeek.getDay(7));
 
 
 // const 
