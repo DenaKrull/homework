@@ -10,5 +10,5 @@ window.myApp.utils = (function(findDay) {
     return findDay;
 })(window.myApp.utils || {});
 
-console.log(window.myApp.utils.getDay(2));
-console.log(window.myApp.utils.getIndex('Tuesday'));
+// console.log(window.myApp.utils.getDay(2));
+// console.log(window.myApp.utils.getIndex('Tuesday'));

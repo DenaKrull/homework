@@ -7,5 +7,5 @@ window.myApp.utils = (function(compare) {
     return compare;
 })(window.myApp.utils || {});
 
-window.myApp.utils.stringCaseInsensitiveEquals('apple', 'ApPle');
-window.myApp.utils.stringCaseInsensitiveEquals('apple', 'frog');
+// window.myApp.utils.stringCaseInsensitiveEquals('apple', 'ApPle');
+// window.myApp.utils.stringCaseInsensitiveEquals('apple', 'frog');
