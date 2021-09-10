@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .buttons {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: 4em;
+            margin-left: -0.5em;
+        }
+        
+        #popup {
+            background-color: lightblue;
+            padding: 1em;
+            box-sizing: border-box;
+            width: 17em;
+            height: 10em;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -5em;
+            margin-left: -8.5em;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button id="test">test</button>
+        <input type="text" id="input">
+        <button id="Go">Go</button>
+    </div>
+
+    <form id="popup">
+
+        <div id="message"> </div>
+        <button class="buttons" id="ok">OK</button>
+
+    </form>
+    <script src="HW.js"></script>
+</body>
+
+</html>
