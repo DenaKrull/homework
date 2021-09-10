@@ -5,10 +5,11 @@
 
 
     function myMap(array, callback) {
-        let result = [];
+        const result = [];
 
         for (let i = 0; i < array.length; i++) {
             result[i] = callback(array[i]);
+
         }
 
         return result;
