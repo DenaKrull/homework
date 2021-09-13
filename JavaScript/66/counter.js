@@ -9,3 +9,5 @@ window.app.counter = (function(module) {
     return module;
 
 })(window.app.counter || {});
+
+// SL - nice

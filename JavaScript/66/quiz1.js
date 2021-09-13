@@ -18,3 +18,5 @@
     console.log('original array', numbers);
 
 })();
+
+// SL - nice

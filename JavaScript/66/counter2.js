@@ -18,3 +18,6 @@ window.app.counter2 = (function(module) {
     return module;
 
 })(window.app.counter2 || {});
+
+// SL - nice
+// SL - grade - 100
