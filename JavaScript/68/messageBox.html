@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .messageBox {
+            background-color: lightgreen !important;
+        }
+    </style>
+</head>
+
+<body>
+    <input id="messageText">
+    <input type="checkbox" id="modal"> modal
+    <button id="show">show</button>
+    <hr> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis nesciunt ad doloremque obcaecati. Iure, ratione expedita perspiciatis nesciunt eius cumque voluptates? Unde repellat, quos, ipsam excepturi deleniti ratione obcaecati ipsum quis
+    natus corporis odit, quidem voluptas aspernatur culpa. Ducimus asperiores consectetur quis iusto officiis voluptates ut non illo excepturi exercitationem aliquid veniam sint quos architecto earum beatae voluptas, in eligendi laborum repellendus autem
+    sapiente maxime nihil. Dolor eligendi aperiam eum corporis! Exercitationem ex sint perferendis. Architecto sapiente provident enim porro veritatis nulla explicabo blanditiis! Deserunt mollitia similique cum, officia incidunt inventore voluptatibus
+    harum error, voluptatum autem eius doloremque quaerat eum architecto eveniet pariatur aut. Dolore culpa est assumenda rerum enim ullam accusamus, quae, nemo laudantium omnis quidem consequatur recusandae repellat aperiam modi, excepturi eligendi ab
+    odio eveniet rem facilis. Nostrum excepturi praesentium sequi, laboriosam distinctio ullam accusantium non soluta eius ex. Vitae totam, quas non unde autem facere possimus quod dolore repellat, ipsa fuga! Magnam dignissimos eos labore dolor nostrum
+    cum eum possimus omnis vel, illo vero atque. Dolorem sed beatae voluptatibus nesciunt explicabo hic repellat! Ea eum tempore voluptatibus maxime eligendi consectetur quidem perferendis aperiam, quisquam recusandae doloribus fuga sit commodi! Nulla
+    reprehenderit quasi natus nam optio mollitia? Nulla odit unde quam dolores dicta quia porro nam quas officiis temporibus sed fugit laborum sapiente eos accusamus dolore necessitatibus qui, molestiae consectetur soluta ex alias. Maiores amet dolore
+    necessitatibus magni libero vero, similique nesciunt voluptatum tempore totam voluptas veniam repellendus laudantium! Sunt velit adipisci nam, odit eligendi ex expedita veniam.
+    <script src="messagebox.js"></script>
+    <script>
+        // pcs.messagebox.show('Hello World!');
+        const messageText = document.getElementById('messageText');
+        const modal = document.getElementById('modal');
+        document.getElementById('show').addEventListener('click', () => {
+            pcs.messagebox.show(messageText.value, modal.checked);
+        });
+
+        pcs.messagebox.show('Is this enough homework?', false, ['Yes', 'No', 'Maybe'],
+            usersChoice => console.log('You picked ' + usersChoice));
+    </script>
+</body>
+
+</html>
