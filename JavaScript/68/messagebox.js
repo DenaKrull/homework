@@ -20,7 +20,7 @@ window.pcs.messagebox = (function() {
     modalDiv.style.display = 'none';
     document.body.appendChild(modalDiv);
 
-    function showMessageBox(msg, modal, theArray, callback) {
+    function showMessageBox(msg, modal, buttons, callback) {
 
         const messageDiv = document.createElement('div');
         const span = document.createElement('span');
@@ -81,12 +81,13 @@ window.pcs.messagebox = (function() {
         const okButton = document.createElement('button');
         okButton.addEventListener('click', () => {
             messageDiv.remove();
+            modalDiv.style.display = 'none';
         });
 
-        if (Array.isArray(theArray)) {
+        if (Array.isArray(buttons)) {
             let innerButton;
 
-            theArray.forEach(element => {
+            buttons.forEach(element => {
                 innerButton = document.createElement('button');
 
                 buttonDiv.appendChild(innerButton);
