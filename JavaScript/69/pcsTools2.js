@@ -15,14 +15,14 @@ window.pcs = function(id) {
     let interval;
 
     function changeColor(lengthOfTime, speed) {
-
+        let run = 0;
         interval = setInterval(() => {
-            let run = 0;
-            const color1 = getRandomColor();
-            setColors(color1);
             run++;
-            if ((run * speed) >= lengthOfTime) {
+            // const color1 = getRandomColor();
+            // setColors(color1);
+            setColors(getRandomColor());
 
+            if (run === lengthOfTime) {
                 clearInterval(interval);
             }
 
