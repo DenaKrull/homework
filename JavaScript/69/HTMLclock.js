@@ -9,9 +9,10 @@ window.pcs.stopwatch = (function() {
     watch.style.position = 'absolute';
     watch.style.left = '1%';
 
+    function ensureTwoDigits(n) {
 
-
-
+        return n.toString().padStart(2, '0');
+    }
 
     function createStopwatch() {
         watch.innerText = "00:00:00";
@@ -32,9 +33,9 @@ window.pcs.stopwatch = (function() {
 
             if (seconds >= 3600) {
                 hours = Math.trunc(seconds / 3600);
-                watch.innerText = `${hours}:${middleSection}:${lastSection}`;
+                watch.innerText = `${ensureTwoDigits(hours)}:${ensureTwoDigits(middleSection)}:${ensureTwoDigits(lastSection)}`;
             } else {
-                watch.innerText = `${hours}:${middleSection2}:${lastSection}`;
+                watch.innerText = `${ensureTwoDigits(hours)}:${ensureTwoDigits(middleSection2)}:${ensureTwoDigits(lastSection)}`;
             }
 
         }, 1000);

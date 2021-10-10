@@ -46,7 +46,9 @@ window.pcs = function(id) {
 
     }
 
-
+    function data(variable, value) {
+        variable = value;
+    }
 
     const theElem = get(id);
 
