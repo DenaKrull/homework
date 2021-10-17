@@ -9,7 +9,7 @@
         e.preventDefault();
         loading();
 
-        fetch("HW copy.js")
+        fetch(inputFile.val())
             .then(r => {
                 if (!r.ok) {
                     console.log(typeof r, r);
@@ -17,7 +17,7 @@
                 }
                 console.log(r.text());
             })
-            .then(fileResult.text(fileResult.val()))
+            .then(fileResult.text(inputFile))
 
         .catch(err => console.log('OOPS', err));
         stopLoading();
