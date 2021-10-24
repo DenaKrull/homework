@@ -28,16 +28,11 @@
                 ingredients.forEach(element => {
                     recipeIngredients.append(element + '<br>');
                 });
-
-
-
             })
             .catch(e => {
                 errorElem.text(e.message);
             });
         recipeIngredients.empty();
     });
-
-
 
 }());
