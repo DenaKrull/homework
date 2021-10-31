@@ -67,8 +67,7 @@
             left: 2px;
             top: 2px;
         }
-        
-        #left {
+        /* #previous {
             position: absolute;
             left: 1px;
             margin-top: 200px;
@@ -77,13 +76,42 @@
             box-sizing: border-box;
         }
         
-        #right {
+        #next {
             position: absolute;
             right: 1px;
             margin-top: 200px;
             width: 5em;
             display: inline-block;
             box-sizing: border-box;
+        } */
+        /* Next & previous buttons */
+        
+        #previous,
+        #next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin: 1em;
+            margin-top: -22px;
+            padding: 16px;
+            color: black;
+            font-weight: bold;
+            font-size: 20px;
+            transition: 0.6s ease;
+            border-radius: 30px;
+            user-select: none;
+            position: fixed;
+        }
+        
+        #next {
+            right: 0;
+        }
+        
+        #previous:hover,
+        #next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
         }
     </style>
 </head>
@@ -95,8 +123,10 @@
             <button>Search</button>
         </form>
     </header>
-    <button id="right">next</button>
-    <button id="left">previous</button>
+    <button id="next">></button>
+    <button id="previous">
+        <
+    </button>
     <div id="display">
         <ul id="images">
         </ul>
