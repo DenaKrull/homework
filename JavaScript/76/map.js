@@ -256,7 +256,7 @@
         const polyline = JSON.parse(polylineData);
         for (let i = 0; i < polyline.length; i++) {
             new google.maps.Polyline({
-                paths: polyline[i].coordinates,
+                path: polyline[i].coordinates,
                 geodesic: true,
                 strokeColor: "#FF0000",
                 strokeOpacity: 1.0,
@@ -264,6 +264,7 @@
                 map: map,
                 animation: google.maps.Animation.DROP,
                 title: 'Your polyline'
+
             });
         }
     }
