@@ -1,0 +1,75 @@
+html,
+body,
+#map,
+#search {
+    height: 100%;
+    margin: 0;
+}
+
+#map {
+    width: 80%;
+}
+
+#search {
+    width: 20%;
+    text-align: center;
+    padding: 1em;
+    float: left;
+    overflow-y: auto;
+    background-color: #252424;
+    box-sizing: border-box;
+}
+
+input {
+    width: 60%;
+}
+
+input,
+button {
+    background-color: #fff;
+    border: 1px solid white;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 1em;
+}
+
+li {
+    border: 1px solid black;
+    cursor: pointer;
+    color: white;
+}
+
+li:hover {
+    background-color: rgb(112, 112, 112);
+    color: black;
+}
+
+li img {
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+    margin: 1em;
+    margin-bottom: 0;
+}
+
+.summary {
+    display: none;
+}
+
+*::-webkit-scrollbar {
+    width: 9px;
+}
+
+*::-webkit-scrollbar-track {
+    background: inherit;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid #000000;
+}

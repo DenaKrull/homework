@@ -16,22 +16,28 @@
             padding: 0;
         }
         
-        #search {
-            width: 20%;
-            float: left;
-            text-align: center;
-            margin-top: 1em;
-            overflow-y: auto;
-        }
-        
         #map {
             width: 80%;
         }
         
-        p {
-            display: inline-block;
-            width: 3em;
-            padding-left: 1em;
+        #search {
+            width: 20%;
+            float: left;
+            text-align: center;
+            padding: 1em;
+            overflow-y: auto;
+            background-color: #252424;
+            box-sizing: border-box;
+        }
+        
+        input {
+            width: 60%;
+        }
+        
+        input,
+        button {
+            background-color: #fff;
+            border: 1px solid white;
         }
         
         ul {
@@ -44,16 +50,12 @@
         li {
             border: 1px solid black;
             cursor: pointer;
-        }
-        
-        li:visited {
-            background-color: #eee;
-            color: green;
+            color: white;
         }
         
         li:hover {
-            background-color: #eee;
-            color: red;
+            background-color: rgb(112, 112, 112);
+            color: black;
         }
         
         img {
@@ -61,6 +63,21 @@
             height: 100px;
             vertical-align: middle;
             margin: 1em;
+            margin-bottom: 0;
+        }
+        
+        *::-webkit-scrollbar {
+            width: 9px;
+        }
+        
+        *::-webkit-scrollbar-track {
+            background: inherit;
+        }
+        
+        *::-webkit-scrollbar-thumb {
+            background-color: #ffffff;
+            border-radius: 5px;
+            border: 1px solid #000000;
         }
     </style>
 
@@ -68,7 +85,7 @@
 
 <body>
     <div id="search">
-        <input type="text">
+        <input type="text" placeholder="enter place">
         <button>Go</button>
         <ul id="places"></ul>
     </div>
