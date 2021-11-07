@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-image: url("images/background_image.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        #images {
+            position: absolute;
+            /* text-align: center; */
+            /* margin: 1em; */
+            /* margin-left: 2em; */
+            clear: both;
+        }
+        
+        .body {
+            display: block;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 4em;
+            width: 250px;
+        }
+        
+        h1 {
+            font-family: fantasy;
+            text-align: center;
+            font-size: 35px;
+        }
+        /* .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-gap: 10px;
+            padding: 10px;
+            margin-top: 10px;
+            float: left;
+        } */
+        /* #images {
+            grid-row: auto;
+            grid-column: auto;
+        }
+         */
+        
+        #hat {
+            top: 700px;
+            left: 387px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <audio autoplay src="images/mrPotatoHeadSong.mp3"></audio> -->
+
+    <div id="bodies">
+        <h1>Mr. Potato Head</h1>
+        <img class='body' src="images/body.png " alt=" ">
+        <!-- <img class='body' src="images/body.png " alt=" "> -->
+    </div>
+
+    <div class="grid-container">
+        <ul>
+
+            <img id="images" src="images/eyes.png " alt=" ">
+            <img id="images" src="images/righthand.png " alt=" ">
+            <img id="images" src="images/lefthand.png " alt=" ">
+            <img id="images" src="images/tongue.png " alt=" ">
+            <img id="images" src="images/glasses.png " alt=" ">
+            <img id="images" src="images/nose.png " alt=" ">
+            <img id="images" src="images/leftear.png " alt=" ">
+            <img id="images" src="images/rightear.png " alt=" ">
+            <img id="images" src="images/bowtie.png " alt=" ">
+            <img id="images" src="images/mouth.png " alt=" ">
+            <img id="images" src="images/purpleglasses.png " alt=" ">
+
+            <img id="images" src="images/teeth.png " alt=" ">
+            <img id="images" id="greenhat" src=" images/greenHat.png " alt=" ">
+            <img id="images" id="hat" src="images/hat.png " alt=" ">
+            <img id="images" id="shoes" src="images/shoes.png " alt=" ">
+        </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js " integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin=" anonymous "></script>
+    <script src="MrPotatoHead.js "></script>
+</body>
+
+</html>
