@@ -1,85 +1,97 @@
 (function() {
     'use strict';
+    const clearButton = $('#clear');
+
+
+
+    const partsElem = $('#parts');
+    const NUM_PARTS = 15;
+    const PART_MARGIN = 100;
+    let maxZindex = 0;
+    let x = 0;
+    let y = 0;
+    const maxWidth = partsElem.innerWidth() - 250;
+    for (let i = 2; i < NUM_PARTS; i++) {
+        $(`<img class="part" src="images/${i}.png">`)
+            .appendTo(partsElem)
+            .css({ top: y, left: x });
+        x += PART_MARGIN;
+        if (x >= maxWidth) {
+            x = 0;
+            y += PART_MARGIN;
+        }
+    }
+    $(`<img class="part potato" src="images/1.png">`)
+        .appendTo(partsElem)
+        .css({ top: 129, left: 505 });
+    $(`<img class="part potato" src="images/0.png">`)
+        .appendTo(partsElem)
+        .css({ top: 129, left: 823 });
+
+    const parts = $('.part');
+
+    function sound(src) {
+        const sound = document.createElement('audio');
+        sound.src = src;
+        sound.setAttribute('preload', 'auto');
+        sound.setAttribute('controls', 'none');
+        sound.style.display = 'none';
+        document.body.appendChild(sound);
+        sound.play();
+    }
+
+    function saveState() {
+        const partsInfo = [];
+        parts.each((i, p) => {
+            const part = $(p);
+            partsInfo.push({
+                src: part.attr('src'),
+                top: part.css('top'),
+                left: part.css('left'),
+                zIndex: part.css('zIndex')
+            });
+        });
+        localStorage.setItem('potato', JSON.stringify(partsInfo));
+    }
+
+
     let dragging = null;
     let offset;
-    let nextZIndex = 1;
-
-
-    const pictures = JSON.parse(localStorage.getItem('pictures')) || [];
-
-    async function getJSON() {
-        try {
-            const response = await fetch('images.json');
-            if (!response.ok) {
-                throw new Error(`${response.status} ${response.statusText}`);
-            }
-            const data = await response.json();
-            data.forEach(picture => {
-                pictures.push({
-                    url: picture.url,
-                    top: picture.top,
-                    left: picture.left
-
-                });
-                localStorage.setItem('pictures', JSON.stringify(pictures));
-            });
-        } catch (err) {
-            console.error(err);
-        }
-
-
-    }
-    getJSON();
-
     $(document)
-        .on('mousedown', '#images', e => {
-            console.log('mousedown');
-            // e.preventDefault();
-
+        .on('mousedown', '.part', e => {
             dragging = $(e.target);
             offset = { x: e.offsetX, y: e.offsetY };
-            dragging.css('z-index', nextZIndex++);
+            // dragging.css({position: 'relative'});
+            if (!dragging.hasClass('potato')) {
+                dragging.css({ zIndex: ++maxZindex });
+            }
         })
         .mousemove(e => {
             if (dragging) {
                 e.preventDefault(); // prevent weird occasional no drag cursor
-                console.log('mousemove', e.offsetY, e.offsetX);
-                dragging.css('z-index', nextZIndex++);
                 dragging.css({ top: e.pageY - offset.y, left: e.pageX - offset.x });
             }
         })
-        .mouseup((e) => {
+        .mouseup(() => {
             if (dragging) {
-                console.log('mouseup');
-                pictures.push({
-                    // type: id,
-                    style: {
-                        top: e.pageY - offset.y,
-                        left: e.pageX - offset.x
-                            // zIndex: e.target.style.zIndex
-                    }
-                });
                 dragging = null;
-
+                saveState();
+                sound('media/effect.wav');
             }
         });
 
 
-
-
-    if (pictures) {
-        pictures.forEach(picture => {
-            $(`#${picture.type}`).css({
-                top: picture.style.top,
-                left: picture.style.left
-            });
-            // $('#images').css('z-index', nextZIndex++);
-            // const picture = JSON.parse(pictureData);
-
-
+    if (localStorage.potato) {
+        const partsInfo = JSON.parse(localStorage.potato);
+        partsInfo.forEach(partInfo => {
+            $(`img[src="${partInfo.src}"]`).css(partInfo);
         });
     }
 
-
+    clearButton.click(() => {
+        localStorage.clear();
+        console.log('cleared');
+        location.reload();
+    });
 
 }());
