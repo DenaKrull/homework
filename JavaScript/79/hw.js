@@ -14,9 +14,7 @@
 
         }
     }
-    const v = new Vehicle('red');
-    v.go(50);
-    v.print();
+
 
     class Plane extends Vehicle {
         constructor(color) {
@@ -28,6 +26,11 @@
             console.log(`now flying at speed ${speed}`);
         }
     }
+
+    const v = new Vehicle('red');
+    v.go(50);
+    v.print();
+
     const p = new Plane('blue');
     p.go(100);
     p.print();
