@@ -5,13 +5,13 @@
 
 
     const partsElem = $('#parts');
-    const NUM_PARTS = 15;
+    const NUM_PARTS = 21;
     const PART_MARGIN = 100;
     let maxZindex = 0;
     let x = 0;
     let y = 0;
     const maxWidth = partsElem.innerWidth() - 250;
-    for (let i = 2; i < NUM_PARTS; i++) {
+    for (let i = 2; i <= NUM_PARTS; i++) {
         $(`<img class="part" src="images/${i}.png">`)
             .appendTo(partsElem)
             .css({ top: y, left: x });
