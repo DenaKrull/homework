@@ -10,7 +10,7 @@
             console.log(`now going at speed ${speed}`);
         }
         print() {
-            console.log(` The ${this.color} vehicle is speeding at ${this.speed} mph`);
+            console.log(`The ${this.color} vehicle is speeding at ${this.speed} mph`);
 
         }
     }
