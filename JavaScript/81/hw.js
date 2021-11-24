@@ -64,7 +64,7 @@
         return Math.floor(Math.random() * 5000 + 1000);
     }
     const ants = [];
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 1000; i++) {
         const moveAnts = new Ants(5, 'red');
         // moveAnts.draw();
         // moveAnts.move();
