@@ -49,6 +49,9 @@
             for (let i = 1; i < this.body.length; i++) {
                 context.drawImage(greenCircle, this.body[i].x, this.body[i].y, THING_SIZE, THING_SIZE);
             }
+
+            if (!localStorage.highscore) { localStorage.setItem('highscore', `${highscore}`); }
+
         }
         get x() {
             return this.body[0].x;
@@ -96,14 +99,12 @@
             }
             this.isEaten();
             this.draw();
+
         }
-
-
         isEaten() {
             if (this.x === apple.x && this.y === apple.y) {
                 console.log('got some food');
                 score++;
-
                 speed = speed * 0.9;
                 crunchSound.currentTime = 0;
                 crunchSound.play();
@@ -115,13 +116,20 @@
                 this.draw();
                 apple.move();
             }
-            if (score > localStorage.highscore) {
-                highscore = score;
-                localStorage.setItem('highscore', `${score}`);
+
+            if (localStorage.highscore) {
+                if (score > localStorage.highscore) {
+                    highscore = score;
+                    localStorage.setItem('highscore', `${highscore}`);
+                }
+
             }
 
-        }
 
+
+
+
+        }
     }
     class Apple {
         constructor() {
@@ -169,7 +177,7 @@
 
     function playAgain() {
         context.font = '20px Arial ';
-        context.fillStyle = 'white';
+        context.fillStyle = 'green';
         context.fillText('Press ESC to play again', canvas.width / 2 - 125, canvas.height / 2 + 125);
         document.addEventListener('keydown', (event) => {
 
