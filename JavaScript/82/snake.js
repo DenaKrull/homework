@@ -27,14 +27,10 @@
 
     class Snake {
         constructor() {
-            // this.x = 0;
-            // this.y = 0;
             this.body = [{ x: 0, y: 0 }];
             this.direction = null;
 
             document.addEventListener('keydown', (event) => {
-
-
                 switch (event.key) {
                     case 'ArrowUp':
                     case 'ArrowDown':
@@ -52,11 +48,7 @@
             context.drawImage(snakeHead, this.x, this.y, THING_SIZE, THING_SIZE);
             for (let i = 1; i < this.body.length; i++) {
                 context.drawImage(greenCircle, this.body[i].x, this.body[i].y, THING_SIZE, THING_SIZE);
-
-
             }
-
-
         }
         get x() {
             return this.body[0].x;
@@ -64,13 +56,11 @@
         get y() {
             return this.body[0].y;
         }
-
         move() {
             let x = this.x;
             let y = this.y;
 
             switch (this.direction) {
-
                 case 'ArrowRight':
                     x += THING_SIZE;
                     break;
@@ -98,16 +88,13 @@
                 gameOver = true;
                 console.log('game over');
 
+
             } else {
                 this.body[0].x = x;
                 this.body[0].y = y;
 
             }
             this.isEaten();
-
-
-
-
             this.draw();
         }
 
@@ -144,11 +131,6 @@
             context.drawImage(appleImg, this.x, this.y, THING_SIZE, THING_SIZE);
         }
         move() {
-            //make sure doesnt pick same spot as last time
-            // if (this.x === this.getRandomNumber(0, canvas.width - THING_SIZE) && this.y === this.getRandomNumber(0, canvas.height - THING_SIZE)) {
-            //     this.x = this.getRandomNumber(0, canvas.width - 1);
-            //     this.y = this.getRandomNumber(0, canvas.height - 1);
-            // }
             this.x = this.getRandomNumber(0, canvas.width - 1);
             this.y = this.getRandomNumber(0, canvas.height - 1);
             this.draw();
@@ -188,32 +170,14 @@
     function playAgain() {
         context.font = '20px Arial ';
         context.fillStyle = 'white';
-
         context.fillText('Press ESC to play again', canvas.width / 2 - 125, canvas.height / 2 + 125);
-
         document.addEventListener('keydown', (event) => {
 
             if (event.key === 'Escape') {
                 window.location.href = 'snake.html';
             }
         });
-        // localStorage.getItem('highscore');
     }
-
-    // function highscorefunc() {
-
-    //     highscore = localStorage.getItem('highscore');
-    //     if (highscore === null) {
-    //         highscore = 0;
-    //     } else {
-    //         highscore = parseInt(highscore);
-
-    //     }
-    //     if (score > highscore) {
-    //         localStorage.setItem('highscore', score);
-    //     }
-    // }
-
 
     const snakeHead = new Image();
     snakeHead.src = 'images/snakehead.png';
