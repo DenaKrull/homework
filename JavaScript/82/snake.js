@@ -2,9 +2,10 @@
     'use strict';
 
     const canvas = document.getElementById('theCanvas');
+    const displayScore = document.getElementById('score');
     const context = canvas.getContext('2d');
 
-    const THING_SIZE = 40;
+    const THING_SIZE = 64;
     let gameOver = false;
     let score = 0;
     let snake;
@@ -33,11 +34,25 @@
             document.addEventListener('keydown', (event) => {
                 switch (event.key) {
                     case 'ArrowUp':
+                        if (this.body.length === 1 || this.direction !== 'ArrowDown') {
+                            this.direction = event.key;
+                        }
+                        break;
                     case 'ArrowDown':
+                        if (this.body.length === 1 || this.direction !== 'ArrowUp') {
+                            this.direction = event.key;
+                        }
+                        break;
                     case 'ArrowLeft':
+                        if (this.body.length === 1 || this.direction !== 'ArrowRight') {
+                            this.direction = event.key;
+                        }
+                        break;
                     case 'ArrowRight':
-                        this.direction = event.key;
-
+                        if (this.body.length === 1 || this.direction !== 'ArrowLeft') {
+                            this.direction = event.key;
+                        }
+                        break;
                 }
                 clickSound.currentTime = 0;
                 clickSound.play();
@@ -62,6 +77,10 @@
         move() {
             let x = this.x;
             let y = this.y;
+            let segmentFormerlyknownastail = this.body.pop();
+            let oldTailx = segmentFormerlyknownastail.x;
+            let oldTaily = segmentFormerlyknownastail.y;
+
 
             switch (this.direction) {
                 case 'ArrowRight':
@@ -78,44 +97,61 @@
                     break;
             }
 
-            if (this.body.length > 1) {
-                this.body.unshift({
-                    x: this.body[0].x,
-                    y: this.body[0].y
-                });
-                this.body.pop();
+            // if (this.body.length > 1 && !gameOver) {
+            //     this.body.unshift({
+            //         x: this.body[0].x,
+            //         y: this.body[0].y
+            //     });
+            //     this.body.pop();
 
+
+            // }
+            if (!gameOver) {
+                segmentFormerlyknownastail.x = x;
+                segmentFormerlyknownastail.y = y;
+                this.body.unshift(segmentFormerlyknownastail);
             }
 
             if (x < 0 || x > canvas.width - THING_SIZE || y < 0 || y > canvas.height - THING_SIZE) {
                 gameOver = true;
                 console.log('game over');
-
-
-            } else {
-                this.body[0].x = x;
-                this.body[0].y = y;
-
             }
-            this.isEaten();
+            if (this.isOnTopOF(x, y, 3)) {
+                gameOver = true;
+            }
+            // } else {
+            //     this.body[0].x = x;
+            //     this.body[0].y = y;
+
+
+            // }
+            if (apple) {
+                this.isEaten(oldTailx, oldTaily);
+            }
+
             this.draw();
 
         }
-        isEaten() {
-            if (this.x === apple.x && this.y === apple.y) {
-                console.log('got some food');
-                score++;
-                speed = speed * 0.9;
-                crunchSound.currentTime = 0;
-                crunchSound.play();
+        isEaten(oldTailx, oldTaily) {
+            if (apple) {
+                if (this.x === apple.x && this.y === apple.y) {
+                    console.log('got some food');
+                    score++;
+                    speed = speed * 0.9;
+                    crunchSound.currentTime = 0;
+                    crunchSound.play();
 
-                this.body.push({
-                    x: this.x,
-                    y: this.y
-                });
-                this.draw();
-                apple.move();
+                    this.body.push({
+                        // x: this.x,
+                        // y: this.y
+                        x: oldTailx,
+                        y: oldTaily
+                    });
+                    this.draw();
+                    apple.move();
+                }
             }
+
 
             if (localStorage.highscore) {
                 if (score > localStorage.highscore) {
@@ -124,11 +160,15 @@
                 }
 
             }
+        }
+        isOnTopOF(x, y, startIndex = 0, endIndex = this.body.length - 1) {
+            for (let i = startIndex; i <= endIndex; i++) {
+                if (this.body[i].x === x && this.body[i].y === y) {
+                    return true;
+                }
 
-
-
-
-
+            }
+            return false;
         }
     }
     class Apple {
@@ -139,8 +179,11 @@
             context.drawImage(appleImg, this.x, this.y, THING_SIZE, THING_SIZE);
         }
         move() {
-            this.x = this.getRandomNumber(0, canvas.width - 1);
-            this.y = this.getRandomNumber(0, canvas.height - 1);
+            do {
+                this.x = this.getRandomNumber(0, canvas.width - 1);
+                this.y = this.getRandomNumber(0, canvas.height - 1);
+            } while (snake.isOnTopOF(this.x, this.y));
+
             this.draw();
         }
         getRandomNumber(min, max) {
@@ -158,9 +201,10 @@
         context.strokeText(`Score: ${score}`, canvas.width - 140, 40);
         context.strokeText(`Highscore: ${localStorage.getItem('highscore')}`, canvas.width - 195, 80);
 
+        if (apple) {
+            apple.draw();
+        }
         snake.move();
-        apple.draw();
-
         if (!gameOver) {
             setTimeout(gameLoop, speed);
         } else {
