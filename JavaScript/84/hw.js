@@ -1,9 +1,6 @@
-'use strict';
+let clickCount = 0;
 
-const nameElem = document.getElementById('name');
-const resultElem = document.getElementById('result');
+$('#button').click(() => {
+    $('#result').text(`I was clicked ${++clickCount} times`);
 
-
-nameElem.addEventListener('input', function() {
-    resultElem.innerHTML = nameElem.value;
 });
