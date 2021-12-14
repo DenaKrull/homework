@@ -1,7 +1,7 @@
 import './css/index.css';
 import $ from 'jquery';
 
-import snakehead from '../images/snakehead.png';
+import snakehead from './images/snakehead.png';
 
 let clickCount = 0;
 
