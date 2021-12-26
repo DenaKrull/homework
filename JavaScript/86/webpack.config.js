@@ -8,6 +8,9 @@ module.exports = {
     entry: './src/index.js',
 
     plugins: [
+        new webpack.ProgressPlugin((percentage, message, ...args) => {
+            console.log('percentage', percentage, 'message', message, 'args', args);
+        }),
         new HtmlWebpackPlugin({
             title: "PCS Webpack Demo",
             template: "./src/index.html",
@@ -19,19 +22,7 @@ module.exports = {
         new CompressionPlugin({
             test: /\.js(\?.*)?$/i,
         }),
-        new webpack.ProgressPlugin({
-            activeModules: false,
-            entries: true,
-            handler(percentage, message, ...args) {
-                // custom logic
-            },
-            modules: true,
-            modulesCount: 5000,
-            profile: false,
-            dependencies: true,
-            dependenciesCount: 10000,
-            percentBy: null,
-        })
+
     ],
     output: {
         path: path.resolve(__dirname, 'dist'),

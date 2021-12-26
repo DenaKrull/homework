@@ -2,7 +2,7 @@
     "python.linting.pylintEnabled": true,
     "python.linting.mypyEnabled": false,
     "python.linting.enabled": true,
-    "liveServer.settings.port": 5501,
+    "liveServer.settings.port": 5859,
     "editor.formatOnSave": true,
     "editor.scrollPredominantAxis": true,
     "editor.fontLigatures": true,
