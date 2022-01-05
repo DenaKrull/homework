@@ -9,7 +9,7 @@ class App extends Component {
     zipcodes: [
       {
         city: 'Monsey',
-        zip: '10952'
+        zip: '10977'
       },
       {
         city: 'Spring Valley',
