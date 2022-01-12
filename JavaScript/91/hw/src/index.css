@@ -1,0 +1,20 @@
+html,body{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  
+}
+.user{
+  /* display: grid; */
+  /* grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr; */
+  float: left;
+  border: 1px solid black;
+  margin: 1em;
+  padding: 1em;
+  text-align: center;
+  height: 75%;
+  width: 25%;
+  border-radius: 10px;
+}
