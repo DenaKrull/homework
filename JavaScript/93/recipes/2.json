@@ -1,0 +1,7 @@
+{
+  "id": 2,
+  "name": "Burger",
+  "ingredients": ["buns", "meat", "tomato"],
+  "directions": ["Mix", "grill", "eat"],
+  "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBKKB9oMfqOovzgqR0B7ws7aOiJtvhpHOqDw&usqp=CAU"
+}
