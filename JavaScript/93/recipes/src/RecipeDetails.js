@@ -15,7 +15,7 @@ export default function RecipeDetails(props) {
 
   useEffect(() => {
     (async () => {
-      const result = await fetch(`${id}.json`);
+      const result = await fetch(`../${id}.json`);
       if (!result.ok) {
         throw new Error(result.statusText);
       }
@@ -24,7 +24,7 @@ export default function RecipeDetails(props) {
     })();
   }, [id])
 
-  const recipe = recipes.find(item => item.id === Number(id));
+  // const recipe = recipes.find(item => item.id === Number(id));
 
   const { name, ingredients, directions, picture } = chooseRecipe;
 

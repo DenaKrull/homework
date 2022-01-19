@@ -10,22 +10,18 @@ import Header from './Header';
 
 function App () {
 
-  // const [state, setState] = useState(props);
-  
   const [chooseRecipe, setChooseRecipe] = useState([]);
-  
-
 
   useEffect(() => {
     (async () => {
-      const result = await fetch(`recipes.json`);
+      const result = await fetch(`../recipes.json`);
       if(!result.ok) {
         throw new Error(result.statusText);
       }
        const data = await result.json();
        setChooseRecipe(data);
     })();
-  }, [chooseRecipe])
+  }, [])
   
     return (
       <div className="container-fluid">
