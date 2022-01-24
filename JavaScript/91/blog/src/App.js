@@ -21,8 +21,15 @@ export default class App extends Component {
 
     return (
       <div>
+        {this.state.foreach(post => (
+          <div className="card">
+            <div className="card-body">
+              <h4>{post.title}</h4>
+              <p>{post.body}</p>
 
-      </div>
+            </div></div>)
+        )
+        }  </div>
     )
   }
 }

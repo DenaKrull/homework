@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            text-align: center;
+        }
+        
+        select {
+            text-align: center;
+        }
+        
+        #input1 {
+            margin: 1em;
+            margin-top: 10%;
+        }
+        
+        #input1 #secondInput {
+            background-color: lightgray;
+            border: white;
+        }
+        
+        #input2 #firstInput {
+            background-color: lightgray;
+            border: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Currency Exchange</h1>
+    <hr>
+    <select id="countriesA">
+    <option hidden>choose a country</option>
+  </select>
+    <select id="countriesB">
+    <option hidden>choose a country</option>
+  </select>
+
+    <div id="exchangeRateDisplay"><span id="symbolA"></span></div>
+    <div id="exchangeRateDisplayB"></div>
+    <div id="input1">
+        <input type="value" id="firstInput">
+        <input type="text" id="secondInput" readonly>
+    </div>
+    <div id="input2">
+        <input type="value" id="firstInput" readonly>
+        <input type="text" id="secondInput">
+    </div>
+
+    <!-- <script src="exchangeRate.js"></script> -->
+    <script src="countries.js"></script>
+</body>
+
+</html>

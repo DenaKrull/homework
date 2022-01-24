@@ -65,6 +65,7 @@ async function getPosts(userId) {
       <button class="getUserComments btn btn-outline-secondary" id='${post.id}' type="button">
       Show Comments
       
+      
       </button>
     </div>
 
@@ -74,7 +75,7 @@ async function getPosts(userId) {
   $('.getUserComments').click(function (e) {
     console.log('button clicked');
     getComments(this.id);
-    // postDisplay.hide();
+     postDisplay.hide();
     $('.getUserComments').innerHTML = 'Hide Comments';
   });
   console.log('posts', data);
