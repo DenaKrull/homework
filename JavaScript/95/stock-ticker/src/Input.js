@@ -8,7 +8,7 @@ export default function Input({ setSymbol }) {
 
   const handleClick = () => {
     setSymbol(inputValue);
-    inputValue === '' ? alert('Please enter a valid symbol') : setInputValue('');
+    // inputValue === '' ? alert('Please enter a valid symbol') : setInputValue('');
   }
 
   return (

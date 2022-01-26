@@ -10,7 +10,7 @@ export default function Stocks({ stockInput }) {
       setLoading(true);
       try {
         //const response = await fetch(`https://finnhub.io/api/v1/quote?symbol=${stockInput}&token=sandbox_c7o5ruaad3idf06mnlqg`)
-        const response = await fetch(`https://finnhub.io/api/v1/stock/profile?symbol=${stockInput}&token=sandbox_c7o5ruaad3idf06mnlqg`);
+        const response = await fetch(`https://finnhub.io/api/v1/stock/profile2?symbol=${stockInput}&token=c7o5ruaad3idf06mnlq0`);
         if (!response.ok) {
           throw new Error(`${response.statusText}`)
         }
@@ -32,7 +32,9 @@ export default function Stocks({ stockInput }) {
   return (
     <>
       <h1 id="stockName">{stocks.ticker} - {stocks.name}</h1>
-      <p id="stockBody">{stocks.description}</p>
+      <p id="stockBody">{stocks.finnhubIndustry}</p>
+      <p id="stockBody">{stocks.exchange}</p>
+      {/* <p id="stockBody">{stocks.description}</p> */}
     </>
 
   );
