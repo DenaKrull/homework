@@ -1,0 +1,19 @@
+<!-- <form #categoryForm="ngForm">
+  <select [(ngModel)]= "category" (ngModelChange)="selectedIndexChanged()" name="category">
+    <option  *ngFor="let c of category; let i=index" [value]="c.name">{{c.name}}</option>
+  </select>
+</form> -->
+<select (change)="categorySelected($event)">
+  <option *ngFor="let c of category">
+    {{c.name}}
+  </option>
+</select>
+
+<!-- <app-items [items]="items"></app-items> -->
+<ul>
+  <li *ngFor="let item of selectedCategory?.items">
+    <!-- {{ item.name }} {{ item.price | currency:'USD' }} -->
+    <app-items [items]="item"></app-items>
+  </li>
+</ul>
+
