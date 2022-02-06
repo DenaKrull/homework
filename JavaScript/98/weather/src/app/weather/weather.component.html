@@ -1,0 +1,9 @@
+<input #input placeholder="enter a zip">
+
+<div  *ngFor="let weather of weathers">
+
+  {{weather.name}},
+  {{weather.main}},
+  {{weather.description}},
+  {{weather.temp}}
+</div>
