@@ -1,0 +1,18 @@
+<div class="container text-center">
+
+  <div class="row">
+    <form class="row row-cols-lg-auto g-3 align-items-center flex-row-reverse">
+      <div class="col-12">
+        <input [(ngModel)]="zip" type="text" class="form-control" name="zip" placeholder="enter your zip"
+          (ngModelChange)="zipChanged()">
+      </div>
+    </form>
+  </div>
+
+
+  <app-weather [weather]="selectedWeather | async"></app-weather>
+
+
+</div>
+
+<router-outlet></router-outlet>

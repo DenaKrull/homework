@@ -1,0 +1,17 @@
+<ng-container *ngIf="weather; else weatherElse">
+  <div class="row">
+    <div>The weather in {{weather?.place}} is currently</div>
+  </div>
+  <div class="row">
+    <img class="col-3 mx-auto" [src]="weather?.icon">
+  </div>
+  <div class="row">
+    <div>{{weather?.details}}</div>
+  </div>
+</ng-container>
+
+<ng-template #weatherElse>
+  <div class="row">
+    <div>Enter a US Zip to see the weather</div>
+  </div>
+</ng-template>
