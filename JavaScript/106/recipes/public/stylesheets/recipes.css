@@ -1,0 +1,145 @@
+body {
+  width: 100%;
+  height: 100%;
+  margin:auto;
+  background-image: url('../images/background.jpg');
+  background-repeat: repeat;
+  background-size: cover;
+
+}
+
+#title{
+  text-align: center;
+  color: rgb(177, 102, 121);
+
+  font:bolder;
+  font-size: 36px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-text-stroke: 1px white;
+}
+
+#recipe img {
+  width: 300px;
+}
+
+#recipe ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#error {
+  color: red;
+}
+
+
+.formGroup {
+  margin-bottom: 1em;
+}
+
+label {
+  width: 6em;
+  display: inline-block;
+}
+
+#addRecipeForm {
+  background-color: lightblue;
+  padding: 1em;
+  box-sizing: border-box;
+  width: 20em;
+  height: 10em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -5em;
+  margin-left: -8.5em;
+  display: none;
+  
+}
+#recipeDetails{
+  background-image: url('../images/kitchen.jpg');
+  /* background-repeat: no-repeat;
+  background-size: cover; */
+  text-align: center;
+    padding: 1em;
+    box-sizing: border-box;
+    width: 34em;
+    height: 38em;
+    position: absolute;
+    top: 50%;
+    left: 43%;
+    margin-top: -5em;
+    margin-left: -8.5em;
+    display: none;
+
+  
+
+}
+
+#close{
+  position: absolute;
+  top: 0;
+  right:0;
+  color: red;
+  border: 2px solid red;
+  padding:1em;
+  font-size: 14px;
+  background-color: rgb(235, 184, 184)
+}
+
+.buttons {
+  text-align: center;
+
+}
+
+
+#ingredients ,#instructions {
+  font:bold;
+  color:rgb(177, 102, 121);
+  font-size: 36px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#recipes{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 1em;
+}
+
+.Individualrecipe{
+  padding: 2em;
+  margin: 2em;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 2em;
+  background-color: lightgrey;
+  text-align: center;
+  background-color: rgb(177, 102, 121);
+  font-size: 20px;
+  
+}
+
+.Individualrecipe:hover{
+  background-color: darkgrey;
+  cursor:pointer;
+}
+
+#edit, #delete{
+  border: 1px solid red;
+
+}
+
+#recipeTitle{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 40px;
+}
+
+#delete{
+  /* background-color: lightblue;
+  padding: 1em;
+  box-sizing: border-box;
+  width: 20em;
+  height: 10em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -5em; */
+}

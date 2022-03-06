@@ -69,7 +69,7 @@
 
     (async () => {
         try {
-            const r = await fetch('http://localhost:80/api/contacts');
+            const r = await fetch('http://localhost:81/contacts/api/contacts');
 
             if (!r.ok) {
                 throw new Error(`${r.status} ${r.statusText}`);

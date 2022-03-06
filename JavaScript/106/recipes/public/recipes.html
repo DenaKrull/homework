@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheets/recipes.css">
+</head>
+
+<body>
+    <button id="new">add recipe</button>
+    <h1 id="title">PCS Recipe App</h1>
+    <h1 id="error"></h1>
+
+    <div id="recipes"></div>
+
+    <div id="recipeDetails">
+        <h2 id="recipeTitle"></h2>
+        <h3 id="ingredients"></h3>
+        <h3 id="instructions"></h3>
+        <button id="close">X</button>
+        <button id="edit">edit</button>
+        <button id="delete">delete</button>
+    </div>
+
+    <form id="addRecipeForm">
+        <div class="formGroup">
+            <label for="name">Name:</label>
+            <input id="name" required>
+        </div>
+
+        <div class="formGroup">
+            <label for="ingredientsInput">Ingredients:</label>
+            <input id="ingredientsInput" required>
+        </div>
+        <div class="formGroup">
+            <label for="instructionsInput">Instructions: </label>
+            <input id="instructionsInput">
+        </div>
+
+        <div class="buttons">
+            <button>save</button>
+            <button type="button" id="cancel">cancel</button>
+        </div>
+
+    </form>
+
+  
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="javascripts/recipes.js"></script>
+</body>
+
+</html>
