@@ -27,7 +27,7 @@
 
     let oldrecipeId = null;
     async function recipeClicked(recipeToLoad) {
-        const recipe = await loadJson(`http://localhost:3000/recipes/${recipeToLoad}`);
+        const recipe = await loadJson(`http://localhost:81/recipes/${recipeToLoad}`);
         if (recipe) {
             console.log(recipe);
             recipeNameElem.text(recipe[0].name);
@@ -62,7 +62,7 @@
 
     }
     async function loadRecipes() {
-        const recipes = await loadJson('http://localhost:3000/recipes');
+        const recipes = await loadJson('http://localhost:81/recipes');
         if (recipes) {
             recipes.forEach(recipe => {
                 recipeDiv.append(`<div class="Individualrecipe" id="${recipe.id}">${recipe.name}</div>`);
@@ -86,7 +86,7 @@
 
     async function deleteRecipe(recipeId, recipeName) {
         try {
-            const response = await fetch(`http://localhost:3000/recipes/${recipeId}`, {
+            const response = await fetch(`http://localhost:81/recipes/${recipeId}`, {
                 method: 'DELETE',
             });
             if (!response.ok) {
@@ -113,7 +113,7 @@
             instructions: instructionsInput.val()
         };
         try {
-            const r = await fetch('http://localhost:3000/recipes', {
+            const r = await fetch('http://localhost:81/recipes', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -148,7 +148,7 @@
             instructions:  instructionsElem.text()
         };
         try {
-            const r = await fetch(`http://localhost:3000/recipes/${recipeId}`, {
+            const r = await fetch(`http://localhost:81/recipes/${recipeId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
