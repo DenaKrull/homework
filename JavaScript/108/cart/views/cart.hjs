@@ -1,0 +1,9 @@
+{{#cartItems}}
+<div>{{item.name}}-- {{item.description}}</div>
+<div>price: {{item.price}}</div>
+<div>quantity: {{quantity}}</div>
+<br>
+{{/cartItems}}
+
+
+<div>Total:{{total}} </div>
