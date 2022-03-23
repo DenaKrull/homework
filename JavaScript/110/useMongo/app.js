@@ -41,7 +41,7 @@ app.use(function(err, req, res, next) {
 
 const MongoClient = require("mongodb").MongoClient;
 const uri =
-  "mongodb+srv://dkrull:7eadaN1imsYp4NTG@cluster0.7fkbz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+  "mongodb+srv://dkrull:<password>@cluster0.7fkbz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 const client = new MongoClient(uri);
 async function run() {
   try {
