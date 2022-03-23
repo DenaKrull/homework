@@ -14,7 +14,6 @@ let chatters = [];
 socketIo.on('connection', socket => {
   console.log('a user connected');
 
-  // socket.emit('foo', 'Hello from server');
 
   let name;
   socket.on('login', (n, callback) => {
