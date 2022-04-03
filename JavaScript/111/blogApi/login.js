@@ -19,6 +19,6 @@ module.exports = async (req, res, next) => {
       return next(new Error('Incorrect password'));
     }
     req.session.username = req.body.username;
-    res.redirect('/');
+    return res.sendStatus(200);
   });
 };
